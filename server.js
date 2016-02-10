@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 var config = require('./helpers/config');
 var db = require('./helpers/db');
-var routes = require('./route');
+var routes = require('./routes');
 
 var app = express();
 var port = Number(process.env.PORT) || '8080';

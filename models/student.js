@@ -1,24 +1,24 @@
 var mongoose = require('mongoose');
 
-var semester = ["sem1","sem2","sem3","sem4","sem5","sem6","sem7","sem8"];
-var testType = ["test1","test2","model","semester"];
-var dept     = ["ece","eee","cse","it"];
+var statustypes = ["Active","Inactive"];
 
 var studentSchema = new mongoose.Schema({
   name      : {type: String, required: true},
-  regNo     : {type: Number, required: true},
+  rollNo    : {type: Number, required: true,unique: true},
   password  : {type: String, required: true},
-  batch     : Number,
-  phone     : {type: Number, required: true},
-  address   : String,
-  email     : {type: String, required: true},
-  dob       :  Date,
-  createdAt : Date,
-  updatedAt : Date,
-  parentnum : {type: Number, required: true},
-  result : String,
-  total : Number,
-  percentage : Number
+  phone     : {type: String, required: true,unique: true},
+  bloodGroup : {type: String},
+  doorNo : {type: String},
+  street : {type: String},
+  city : {type: String},
+  state : {type: String},
+  pincode : {type: String},
+  email     : {type: String, required: true,unique: true},
+  dob       : {type: Date},
+  deptId    : {type: mongoose.Schema.Types.ObjectId, ref:'dept'},
+  status    : {type:String,enum:statustypes},
+  createdAt : {type: Date,default: Date.now},
+  updatedAt : {type: Date},
 }, {collection : 'student'});
 
 var Student =  mongoose.model('student',studentSchema);
