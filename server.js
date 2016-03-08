@@ -1,5 +1,6 @@
 //Node modules
-var bodyParser = require("body-parser");
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
 var config = require('./helpers/config');

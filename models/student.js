@@ -5,7 +5,7 @@ var statustypes = ["Active","Inactive"];
 var studentSchema = new mongoose.Schema({
   name      : {type: String, required: true},
   rollNo    : {type: Number, required: true,unique: true},
-  password  : {type: String, required: true},
+  _password  : {type: String, required: true},
   phone     : {type: String, required: true,unique: true},
   bloodGroup : {type: String},
   doorNo : {type: String},
